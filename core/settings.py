@@ -118,10 +118,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = ['static/']
+# STATIC_URL, STATICFILES_DIRS
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT - для статичных файлов джанго
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'sample_app.ExtendedUser'
+# AUTH_USER_MODEL - Параметр, который определяет какая модель отвечает за юзеров!
 
+LOGIN_REDIRECT_URL = 'home_url'
+LOGOUT_REDIRECT_URL = 'login_url'
+LOGIN_URL = 'login_url'
